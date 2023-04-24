@@ -1,0 +1,488 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+Ejercicio 1
+\end_layout
+
+\begin_layout Standard
+Halle una descomposición en valores singulares de 
+\begin_inset Formula $A=\left[\begin{array}{cc}
+2 & -1\\
+2 & 2
+\end{array}\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Solución
+\end_layout
+
+\begin_layout Standard
+Buscamos matrices ortogonales U, V y una matriz diagonal 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+ tales que 
+\begin_inset Formula $A=U\Sigma V^{T}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Comenzamos por computar 
+\begin_inset Formula $B=A^{T}A$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+B=\left[\begin{array}{cc}
+2 & 2\\
+-1 & 2
+\end{array}\right]\left[\begin{array}{cc}
+2 & -1\\
+2 & 2
+\end{array}\right]=\left[\begin{array}{cc}
+8 & 2\\
+2 & 5
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Luego, nos interesa conocer los autovalores 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ y autovectores 
+\begin_inset Formula $v\neq0$
+\end_inset
+
+ a derecha de B, tales que
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+Bv & =\sigma^{2}v\\
+\left(B-\sigma^{2}I\right)v & =0\\
+Cv & =0
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como 
+\begin_inset Formula $v\ne0$
+\end_inset
+
+, 
+\begin_inset Formula $C$
+\end_inset
+
+ debe ser singular, con determinante 
+\begin_inset Formula $\left|\cdot\right|$
+\end_inset
+
+ igual a cero.
+ Construimos el 
+\emph on
+polinomio característico 
+\emph default
+correspondiente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+p(x) & =\left|C\right|\\
+ & =\vert B-xI\vert\\
+ & =\left|\begin{array}{cc}
+8-x & 2\\
+2 & 5-x
+\end{array}\right|\\
+ & =\text{\left(8-x\right)\left(5-x\right)}-4\\
+ & =40-8x-5x+x^{2}-4\\
+ & =x^{2}-13x+36
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Disgresión Para toda matriz cuadrada A de 2x2, su polinomio característivo
+ es 
+\begin_inset Formula $p\left(x\right)=\det A-\left(\text{Tr}A\right)x+x^{2}$
+\end_inset
+
+.
+ Para toda matrix cuadrada de 3x3, su p.c.
+ es 
+\begin_inset Formula $p\left(x\right)=\det A+\left(a_{ij}a_{ji}-a_{ii}a_{jj}\right)x+\left(\text{Tr}A\right)x^{2}-x^{3}$
+\end_inset
+
+.
+ Pruébelo.
+\end_layout
+
+\begin_layout Standard
+Las raíces de 
+\begin_inset Formula $p\left(x\right)$
+\end_inset
+
+ resultan ser
+\begin_inset Formula 
+\begin{align*}
+\left\{ x_{0},x_{1}\right\}  & =\frac{13\pm\sqrt{13^{2}-4\times36}}{2}\\
+ & =\frac{13\pm\sqrt{25}}{2}\\
+ & =\left\{ 9,4\right\} 
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Y los valores singulares no-nulos de 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+ son las raíces de los autovalores hallados, 
+\begin_inset Formula $\left\{ 3,2\right\} .$
+\end_inset
+
+ Excelente! Como A es de 2x2, U, 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+ y V también.
+ En particular, ya podemos completar 
+\begin_inset Formula $\Sigma=\left[\begin{array}{cc}
+3 & 0\\
+0 & 2
+\end{array}\right]$
+\end_inset
+
+, y no hace falta 
+\begin_inset Quotes eld
+\end_inset
+
+acolchonarla
+\begin_inset Quotes erd
+\end_inset
+
+ con columnas de ceros.
+\end_layout
+
+\begin_layout Standard
+Sabemos además que las columnas de 
+\begin_inset Formula $V$
+\end_inset
+
+ son los autovectores (normalizados) correspondientes a los autovalores
+ de 
+\begin_inset Formula $B$
+\end_inset
+
+.
+ Computamos:
+\begin_inset Formula 
+\begin{align*}
+\left(B-9I\right)\left[\begin{array}{c}
+x\\
+y
+\end{array}\right] & =\left[\begin{array}{c}
+0\\
+0
+\end{array}\right]\\
+\left[\begin{array}{cc}
+-1 & 2\\
+2 & -4
+\end{array}\right]\left[\begin{array}{c}
+x\\
+y
+\end{array}\right] & =\left[\begin{array}{c}
+0\\
+0
+\end{array}\right]
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+de donde se ve que un autovector cpte.
+ a 
+\begin_inset Formula $\lambda_{1}=9$
+\end_inset
+
+ es 
+\begin_inset Formula $v_{1}=\left[\begin{array}{c}
+2\\
+1
+\end{array}\right]$
+\end_inset
+
+.
+ Procediendo análogamente para 
+\begin_inset Formula $\left(B-4I\right)v=0$
+\end_inset
+
+, encontramos 
+\begin_inset Formula $v_{2}=\left[\begin{array}{c}
+1\\
+-2
+\end{array}\right]$
+\end_inset
+
+.
+ Como la norma de ambos vectores es 
+\begin_inset Formula $\sqrt{5},$
+\end_inset
+
+ podemos escribir
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V=V^{T}=\frac{1}{\sqrt{5}}\left[\begin{array}{cc}
+2 & 1\\
+1 & -2
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Con un poco de manipulación algebraica, podemos encontrar una expresión
+ sencilla para U:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+A & =U\Sigma V^{T}\\
+AV & =U\Sigma V^{T}V=U\Sigma\\
+AV\Sigma^{-1} & =U\Sigma\Sigma^{-1}=U
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Es decir,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+U & =AV\Sigma^{-1}\\
+ & =\left[\begin{array}{cc}
+2 & -1\\
+2 & 2
+\end{array}\right]\frac{1}{\sqrt{5}}\left[\begin{array}{cc}
+2 & 1\\
+1 & -2
+\end{array}\right]\left[\begin{array}{cc}
+1/3 & 0\\
+0 & 1/2
+\end{array}\right]\\
+ & =\frac{1}{\sqrt{5}}\left[\begin{array}{cc}
+3 & 4\\
+6 & -2
+\end{array}\right]\left[\begin{array}{cc}
+1/3 & 0\\
+0 & 1/2
+\end{array}\right]\\
+ & =\frac{1}{\sqrt{5}}\left[\begin{array}{cc}
+1 & 2\\
+2 & -1
+\end{array}\right]
+\end{align*}
+
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Lo cual completa nuestra descomposición
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A=\frac{1}{\sqrt{5}}\left[\begin{array}{cc}
+1 & 2\\
+2 & -1
+\end{array}\right]\left[\begin{array}{cc}
+1/3 & 0\\
+0 & 1/2
+\end{array}\right]\frac{1}{\sqrt{5}}\left[\begin{array}{cc}
+2 & 1\\
+1 & -2
+\end{array}\right]^{T}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Ejercicio 2
+\end_layout
+
+\begin_layout Enumerate
+Escriba una función en Python, 
+\begin_inset Formula $dvs\left(A\right)$
+\end_inset
+
+, que devuelva una terna U, S, VT con la descomposición en valores singulares
+ de A, donde U y V son las matrices 
+\begin_inset Formula $U,V^{T}$
+\end_inset
+
+; y S es un vector tal que 
+\begin_inset Formula $\Sigma=diag\left(S\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Compruebe que 
+\begin_inset Formula $dvs\left(\left[\begin{array}{cc}
+2 & -1\\
+2 & 2
+\end{array}\right]\right)$
+\end_inset
+
+ retorna una solución equivalente a la que obtuvo en (1).
+\end_layout
+
+\begin_layout Enumerate
+Genere 20 matrices 
+\begin_inset Formula $M_{1},\dots,M_{20}$
+\end_inset
+
+ de 3x4 con entradas uniformemente elegidas entre 0 y 1.
+ Compute 
+\begin_inset Formula $dvs\left(A\right)$
+\end_inset
+
+, y compruebe que en todos los casos, el resultado sea equivalente a la
+ implementación de referencia, 
+\begin_inset Formula $numpy.linalg.svd$
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

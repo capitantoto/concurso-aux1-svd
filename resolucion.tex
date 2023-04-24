@@ -1,0 +1,186 @@
+%% LyX 2.3.7 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[english]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{amsmath}
+\usepackage{babel}
+\begin{document}
+
+\section*{Ejercicio 1}
+
+Halle una descomposición en valores singulares de $A=\left[\begin{array}{cc}
+2 & -1\\
+2 & 2
+\end{array}\right]$
+
+\subsection*{Solución}
+
+Buscamos matrices ortogonales U, V y una matriz diagonal $\Sigma$
+tales que $A=U\Sigma V^{T}$
+
+Comenzamos por computar $B=A^{T}A$
+\[
+B=\left[\begin{array}{cc}
+2 & 2\\
+-1 & 2
+\end{array}\right]\left[\begin{array}{cc}
+2 & -1\\
+2 & 2
+\end{array}\right]=\left[\begin{array}{cc}
+8 & 2\\
+2 & 5
+\end{array}\right]
+\]
+
+Luego, nos interesa conocer los autovalores $\lambda$ y autovectores
+$v\neq0$ a derecha de B, tales que
+
+\begin{align*}
+Bv & =\sigma^{2}v\\
+\left(B-\sigma^{2}I\right)v & =0\\
+Cv & =0
+\end{align*}
+
+Como $v\ne0$, $C$ debe ser singular, con determinante $\left|\cdot\right|$
+igual a cero. Construimos el \emph{polinomio característico }correspondiente:
+
+\begin{align*}
+p(x) & =\left|C\right|\\
+ & =\vert B-xI\vert\\
+ & =\left|\begin{array}{cc}
+8-x & 2\\
+2 & 5-x
+\end{array}\right|\\
+ & =\text{\ensuremath{\left(8-x\right)\left(5-x\right)}}-4\\
+ & =40-8x-5x+x^{2}-4\\
+ & =x^{2}-13x+36
+\end{align*}
+
+\begin{description}
+\item [{Disgresión}] Para toda matriz cuadrada A de 2x2, su polinomio característivo
+es $p\left(x\right)=\det A-\left(\text{Tr}A\right)x+x^{2}$. Para
+toda matrix cuadrada de 3x3, su p.c. es $p\left(x\right)=\det A+\left(a_{ij}a_{ji}-a_{ii}a_{jj}\right)x+\left(\text{Tr}A\right)x^{2}-x^{3}$.
+Pruébelo.
+\end{description}
+Las raíces de $p\left(x\right)$ resultan ser
+\begin{align*}
+\left\{ x_{0},x_{1}\right\}  & =\frac{13\pm\sqrt{13^{2}-4\times36}}{2}\\
+ & =\frac{13\pm\sqrt{25}}{2}\\
+ & =\left\{ 9,4\right\} 
+\end{align*}
+
+Y los valores singulares no-nulos de $\Sigma$ son las raíces de los
+autovalores hallados, $\left\{ 3,2\right\} .$ Excelente! Como A es
+de 2x2, U, $\Sigma$ y V también. En particular, ya podemos completar
+$\Sigma=\left[\begin{array}{cc}
+3 & 0\\
+0 & 2
+\end{array}\right]$, y no hace falta ``acolchonarla'' con columnas de ceros.
+
+Sabemos además que las columnas de $V$ son los autovectores (normalizados)
+correspondientes a los autovalores de $B$. Computamos:
+\begin{align*}
+\left(B-9I\right)\left[\begin{array}{c}
+x\\
+y
+\end{array}\right] & =\left[\begin{array}{c}
+0\\
+0
+\end{array}\right]\\
+\left[\begin{array}{cc}
+-1 & 2\\
+2 & -4
+\end{array}\right]\left[\begin{array}{c}
+x\\
+y
+\end{array}\right] & =\left[\begin{array}{c}
+0\\
+0
+\end{array}\right]
+\end{align*}
+
+de donde se ve que un autovector cpte. a $\lambda_{1}=9$ es $v_{1}=\left[\begin{array}{c}
+2\\
+1
+\end{array}\right]$. Procediendo análogamente para $\left(B-4I\right)v=0$, encontramos
+$v_{2}=\left[\begin{array}{c}
+1\\
+-2
+\end{array}\right]$. Como la norma de ambos vectores es $\sqrt{5},$ podemos escribir
+
+\[
+V=V^{T}=\frac{1}{\sqrt{5}}\left[\begin{array}{cc}
+2 & 1\\
+1 & -2
+\end{array}\right]
+\]
+
+Con un poco de manipulación algebraica, podemos encontrar una expresión
+sencilla para U:
+
+\begin{align*}
+A & =U\Sigma V^{T}\\
+AV & =U\Sigma V^{T}V=U\Sigma\\
+AV\Sigma^{-1} & =U\Sigma\Sigma^{-1}=U
+\end{align*}
+
+Es decir,
+
+\begin{align*}
+U & =AV\Sigma^{-1}\\
+ & =\left[\begin{array}{cc}
+2 & -1\\
+2 & 2
+\end{array}\right]\frac{1}{\sqrt{5}}\left[\begin{array}{cc}
+2 & 1\\
+1 & -2
+\end{array}\right]\left[\begin{array}{cc}
+1/3 & 0\\
+0 & 1/2
+\end{array}\right]\\
+ & =\frac{1}{\sqrt{5}}\left[\begin{array}{cc}
+3 & 4\\
+6 & -2
+\end{array}\right]\left[\begin{array}{cc}
+1/3 & 0\\
+0 & 1/2
+\end{array}\right]\\
+ & =\frac{1}{\sqrt{5}}\left[\begin{array}{cc}
+1 & 2\\
+2 & -1
+\end{array}\right]
+\end{align*}
+Lo cual completa nuestra descomposición
+
+\[
+A=\frac{1}{\sqrt{5}}\left[\begin{array}{cc}
+1 & 2\\
+2 & -1
+\end{array}\right]\left[\begin{array}{cc}
+1/3 & 0\\
+0 & 1/2
+\end{array}\right]\frac{1}{\sqrt{5}}\left[\begin{array}{cc}
+2 & 1\\
+1 & -2
+\end{array}\right]^{T}
+\]
+
+
+\section*{Ejercicio 2}
+\begin{enumerate}
+\item Escriba una función en Python, $dvs\left(A\right)$, que devuelva
+una terna U, S, VT con la descomposición en valores singulares de
+A, donde U y V son las matrices $U,V^{T}$; y S es un vector tal que
+$\Sigma=diag\left(S\right)$.
+\item Compruebe que $dvs\left(\left[\begin{array}{cc}
+2 & -1\\
+2 & 2
+\end{array}\right]\right)$ retorna una solución equivalente a la que obtuvo en (1).
+\item Genere 20 matrices $M_{1},\dots,M_{20}$ de 3x4 con entradas uniformemente
+elegidas entre 0 y 1. Compute $dvs\left(A\right)$, y compruebe que
+en todos los casos, el resultado sea equivalente a la implementación
+de referencia, $numpy.linalg.svd$
+\end{enumerate}
+
+\end{document}
